@@ -1,4 +1,4 @@
-![logo](https://raw.githubusercontent.com/kozennnn/cometjs-template/dev/resources/logo.png)
+<img src="https://raw.githubusercontent.com/kozennnn/cometjs-template/dev/resources/logo.png" width="400" alt="CometJS Logo">
 
 ## CometJS - A magic web server
 
