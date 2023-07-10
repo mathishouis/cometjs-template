@@ -1,6 +1,6 @@
 import { Comet, Router } from "cometjs";
-import { webRoute, apiRoute, adminRoute } from "./routes";
 import { config } from "dotenv";
+import { AdminController, ApiController, HomeController } from "./controllers";
 
 /**
  * Environment configuration initialization
@@ -11,9 +11,9 @@ config();
  *  Route initialization
  */
 const router: Router = new Router();
-webRoute(router);
-apiRoute(router);
-adminRoute(router);
+router.controller(HomeController);
+router.controller(ApiController);
+router.controller(AdminController);
 
 /**
  * Comet initialization

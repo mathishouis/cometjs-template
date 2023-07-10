@@ -1,18 +1,26 @@
-import { Controller, Request, Response } from "cometjs";
+import { BaseController, Controller, Get, Middleware, Request, Response } from "cometjs";
+import { Authenticated } from "../middlewares";
 
-export class HomeController extends Controller {
-  public static index(request: Request, response: Response): void {
-    response.status(200);
+@Controller()
+export class HomeController extends BaseController {
+
+  @Get("home.index", "/")
+  index(request: Request, response: Response): void {
+    response.writeHead(200);
     response.end("Index");
   }
 
-  public static contact(request: Request, response: Response): void {
-    response.status(200);
+  @Get("home.contact", "/contact")
+  @Middleware(Authenticated)
+  contact(request: Request, response: Response): void {
+    response.writeHead(200);
     response.end("Contact");
   }
 
-  public static about(request: Request, response: Response): void {
-    response.status(200);
+  @Get("home.about", "/about")
+  about(request: Request, response: Response): void {
+    response.writeHead(200);
     response.end("About");
   }
+
 }

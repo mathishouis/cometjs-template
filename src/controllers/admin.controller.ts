@@ -1,18 +1,26 @@
-import { Controller, Request, Response } from "cometjs";
+import { BaseController, Controller, Get, Middleware, Request, Response } from "cometjs";
+import { Authenticated } from "../middlewares";
 
-export class AdminController extends Controller {
-  public static login(request: Request, response: Response): void {
-    response.status(200);
+@Controller("/admin")
+export class AdminController extends BaseController {
+
+  @Get("admin.login", "/login")
+  login(request: Request, response: Response): void {
+    response.writeHead(200);
     response.end("Admin Login");
   }
 
-  public static register(request: Request, response: Response): void {
-    response.status(200);
+  @Get("admin.register", "/register")
+  register(request: Request, response: Response): void {
+    response.writeHead(200);
     response.end("Admin Register");
   }
 
-  public static dashboard(request: Request, response: Response): void {
-    response.status(200);
+  @Get("admin.dashboard", "/dashboard")
+  @Middleware(Authenticated)
+  dashboard(request: Request, response: Response): void {
+    response.writeHead(200);
     response.end("Admin Dashboard");
   }
+
 }

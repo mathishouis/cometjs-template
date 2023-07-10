@@ -1,8 +1,12 @@
-import { Closure, Middleware, Request } from "cometjs";
+import { BaseMiddleware, Closure, Handler, Middleware, Request } from "cometjs";
 
-export class AuthenticationMiddleware extends Middleware {
+@Middleware()
+export class Authenticated extends BaseMiddleware {
+
+  @Handler()
   handle(request: Request, next: Closure): void {
-    // Implement auth verification
-    return next(request);
+    console.log("middleware!");
+    next();
   }
+
 }

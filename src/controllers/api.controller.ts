@@ -1,4 +1,4 @@
-import { Controller, Request, Response } from "cometjs";
+import { BaseController, Controller, Get, Request, Response } from "cometjs";
 
 interface User {
   id: number;
@@ -24,7 +24,7 @@ const data: User[] = [
   }
 ];
 
-export class ApiController extends Controller {
+/*export class ApiController extends Controller {
   public static users(request: Request, response: Response): void {
     response.json(data);
   }
@@ -35,4 +35,21 @@ export class ApiController extends Controller {
     if (user) response.json(user);
     else response.json({ error: true, message: "User not found." });
   }
+}*/
+
+@Controller("/api/v1")
+export class ApiController extends BaseController {
+
+  @Get("api.users", "/users")
+  users(request: Request, response: Response): void {
+    response.writeHead(200);
+    response.end("Api Users");
+  }
+
+  @Get("api.user", "/user/[id]", { id: /^\d+$/ })
+  user(request: Request, response: Response): void {
+    response.writeHead(200);
+    response.end("Api user");
+  }
+
 }
