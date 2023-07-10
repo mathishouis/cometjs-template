@@ -1,4 +1,4 @@
-![logo]()
+![logo](https://raw.githubusercontent.com/kozennnn/cometjs-template/dev/resources/logo.png)
 
 ## CometJS - A magic web server
 
