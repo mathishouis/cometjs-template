@@ -1,12 +1,11 @@
 <img src="https://raw.githubusercontent.com/kozennnn/cometjs-template/dev/resources/logo.png" width="400" alt="CometJS Logo">
 
-## CometJS - A magic web server
+## CometJS - A magic web framework
 
 [![](https://dcbadge.vercel.app/api/server/rBp83wXW8n?style=flat&theme=plastic)](https://discord.gg/rBp83wXW8n)
 ![Lines of code](https://img.shields.io/tokei/lines/github/kozennnn/cometjs-template?color=yellow&logo=github)
 
 An open-source web framework using TypeScript which ensures beautiful syntax.
-CometJS permet de créer des applications web robuste, rapide et flexible de manière simple
 CometJS allows to create robust, fast and flexible web applications in a simple and fast way.
 
 ### Follow us
